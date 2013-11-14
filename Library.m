@@ -44,6 +44,14 @@
  *
  */
 
+-(void) setLibraryName: (NSString*) name {
+    library_name = name;
+}
+
+-(NSString*) getLibraryName {
+    return library_name;
+}
+
 -(void) addShelf: (NSString*) shelfName {
     [shelves addObject: [[Shelf new] initWithSectionName: shelfName]];
 }
