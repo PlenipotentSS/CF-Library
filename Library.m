@@ -1,6 +1,6 @@
 //
 //  Library.m
-//  Public Library
+//  Code Fellows Library Assignment
 //
 //  Created by Steven Stevenson on 11/13/13.
 //
