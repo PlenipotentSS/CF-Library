@@ -6,10 +6,27 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		D2EA180E18340BAD003E7A30 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		D2EA180F18340BAD003E7A30 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		D2EA1810183410DA003E7A30 /* Shelf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shelf.h; sourceTree = "<group>"; };
+		D2EA1811183410DA003E7A30 /* Shelf.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Shelf.m; sourceTree = "<group>"; };
+		D2EA181218342374003E7A30 /* Library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		D2EA181318342374003E7A30 /* Library.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
+		D2EA181418343039003E7A30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		D2EA180718340B86003E7A30 = {
 			isa = PBXGroup;
 			children = (
+				D2EA181418343039003E7A30 /* main.m */,
+				D2EA181218342374003E7A30 /* Library.h */,
+				D2EA181318342374003E7A30 /* Library.m */,
+				D2EA1810183410DA003E7A30 /* Shelf.h */,
+				D2EA1811183410DA003E7A30 /* Shelf.m */,
+				D2EA180E18340BAD003E7A30 /* Book.h */,
+				D2EA180F18340BAD003E7A30 /* Book.m */,
 			);
 			sourceTree = "<group>";
 		};
