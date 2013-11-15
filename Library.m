@@ -4,6 +4,9 @@
 //
 //  Created by Steven Stevenson on 11/13/13.
 //
+//  Object Library containing Library Name,
+//  list of shelves (type Shelf),
+//  and additional Shelf for unshelved books
 //
 
 #import "Library.h"
@@ -14,10 +17,8 @@
 
 @synthesize unshelved_books;
 
-/*
- *  Library Constructors
- *
- */
+//////////////Library Constructors
+
 
 -(id) init {
     self = [super init];
@@ -45,10 +46,9 @@
     return self;
 }
 
-/*
- *  Other Library Methods
- *
- */
+////////////// Library Accessors & Mutators
+
+
 
 -(void) setLibraryName: (NSString*) name {
     library_name = name;
@@ -58,12 +58,24 @@
     return library_name;
 }
 
+//////////////Other Library Methods
+
+/*
+ *  @param theShelf add theShelf to object's list
+ *  and add theShelf location to be this library
+ *
+ */
 -(void) addShelf: (Shelf*) theShelf {
     [shelves addObject: theShelf];
     [theShelf setLocation: self];
     
 }
 
+/*
+ *  @param theShelf remove theShelf from object's list
+ *  and update theShelf's location
+ *
+ */
 -(void) removeShelf: (Shelf*) theShelf {
     if ( [shelves containsObject: theShelf]) {
         NSArray *booksRemoved = [theShelf getBooks];
@@ -75,11 +87,19 @@
     }
 }
 
+/*
+ *  return NSArray of all Shelves from object
+ *
+ */
 -(NSArray*) getShelves {
     NSArray *arr =[shelves copy];
     return arr;
 }
 
+/*
+ *  return NSArray of all Books on shelves
+ *
+ */
 -(NSArray*) getBooks {
     NSMutableArray *allBooks = [[NSMutableArray alloc] init];
     for (Shelf *thisShelf in shelves) {
@@ -89,13 +109,12 @@
     return arr;
 }
 
+/*
+ *  return NSArray of all books that are unshelved
+ *
+ */
 -(NSArray*) getunShelvedBooks {
-    NSMutableArray *allBooks = [[NSMutableArray alloc] init];
-    for (Shelf *noShelf in unshelved_books) {
-        [allBooks addObjectsFromArray: [noShelf getBooks]];
-    }
-    NSArray *arr = [allBooks copy];
-    return arr;
+    return [unshelved_books getBooks];
 }
 
 

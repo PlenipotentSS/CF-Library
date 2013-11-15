@@ -4,6 +4,9 @@
 //
 //  Created by Steven Stevenson on 11/13/13.
 //
+//  Object Shelf containing Section Name,
+//  list of Books (type Book),
+//  and location of Shelf (type Library)
 //
 
 #import <Foundation/Foundation.h>

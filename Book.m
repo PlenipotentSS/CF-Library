@@ -4,6 +4,9 @@
 //
 //  Created by Steven Stevenson on 11/13/13.
 //
+//  Object Book containing Author and, Title,
+//  and Location (type Shelf)
+//
 //
 
 #import "Book.h"
@@ -12,10 +15,8 @@
 
 @implementation Book
 
-/*
- *  Book Constructors
- *
- */
+//////////////Book Constructors
+
 
 -(id)init {
     self = [super init];
@@ -46,10 +47,8 @@
     return self;
 }
 
-/*
- *  Book Accessors & Mutators
- *
- */
+
+////////////// Book Accessors & Mutators
 
 
 -(void) setTitle: (NSString*) t setAuthor: (NSString*) a {
@@ -77,11 +76,14 @@
     return location;
 }
 
-/*
- *  Other Book Methods
- *
- */
+//////////////Other Book Methods
 
+
+/*
+ *  @param theShelf puts the current Book object in the given Shelf
+ *
+ *  and updates current location
+ */
 -(void) enShelf: (Shelf*) theShelf {
     if ( [location.getSection isEqualToString:@"Unshelved Books"]) {
         [location.getLocation.unshelved_books removeBook:self];
@@ -90,11 +92,18 @@
     [theShelf putBook: self];
 }
 
+/*
+ *  removes book from shelf (to be put in Unshelved Books)
+ */
 -(Book*) unShelf {
     [location removeBook: self];
     return self;
 }
 
+/*
+ *  removes the current book from shelf and destroys it from any
+ *  reference
+ */
 -(void) destroyBook {
     [location destroyBook:self];
     location = NULL;

@@ -4,6 +4,9 @@
 //
 //  Created by Steven Stevenson on 11/13/13.
 //
+//  Object Library containing Library Name,
+//  list of shelves (type Shelf),
+//  and additional Shelf for unshelved books
 //
 
 #import <Foundation/Foundation.h>

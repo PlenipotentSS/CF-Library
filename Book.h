@@ -4,6 +4,9 @@
 //
 //  Created by Steven Stevenson on 11/13/13.
 //
+//  Object Book containing Author and, Title,
+//  and Location (type Shelf)
+//
 //
 
 #import <Foundation/Foundation.h>
