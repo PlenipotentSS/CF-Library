@@ -70,9 +70,9 @@
 }
 
 -(void) removeBook: (Book*) theBook {
-    if ([book_arr containsObject: theBook] ) {
+    if ([book_arr containsObject: theBook]) {
         [book_arr removeObject: theBook];
-        if (location) {
+        if (![self.getSection isEqualToString:@"Unshelved Books"]) {
             [theBook enShelf: location.unshelved_books];
         }
     }

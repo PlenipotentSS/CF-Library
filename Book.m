@@ -8,6 +8,7 @@
 
 #import "Book.h"
 #import "Shelf.h"
+#import "Library.h"
 
 @implementation Book
 
@@ -82,13 +83,15 @@
  */
 
 -(void) enShelf: (Shelf*) theShelf {
+    if ( [location.getSection isEqualToString:@"Unshelved Books"]) {
+        [location.getLocation.unshelved_books removeBook:self];
+    }
     location = theShelf;
     [theShelf putBook: self];
 }
 
 -(Book*) unShelf {
     [location removeBook: self];
-    location = NULL;
     return self;
 }
 
