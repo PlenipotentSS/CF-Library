@@ -21,7 +21,7 @@
     if (self) {
         title = @"";
         author = @"";
-        location = Nil;
+        location = nil;
     }
     
     return self;
@@ -49,6 +49,7 @@
  *  Book Accessors & Mutators
  *
  */
+
 
 -(void) setTitle: (NSString*) t setAuthor: (NSString*) a {
     title = t;

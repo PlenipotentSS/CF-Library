@@ -8,6 +8,7 @@
 
 #import "Shelf.h"
 #import "Book.h"
+#import "Library.h"
 
 @implementation Shelf
 
@@ -20,6 +21,7 @@
     self = [super init];
     if (self) {
         book_arr = [[NSMutableArray alloc] init];
+        location = nil;
     }
     
     return self;
@@ -38,6 +40,22 @@
  *  Other Shelf Methods
  *
  */
+
+-(void) setLocation: (Library*) loc{
+    location = loc;
+}
+
+-(BOOL) hasLocation {
+    return [location isKindOfClass: [Library class]];
+}
+
+- (Library*) getLocation {
+    if ( [self hasLocation] ) {
+        return location;
+    } else {
+        return nil;
+    }
+}
 
 -(void) setSection: (NSString*) name {
     section = name;

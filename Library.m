@@ -32,7 +32,9 @@
     if (self) {
         int namesCount = [names count];
         for (int i=0; i<namesCount; i++ ){
-            [self addShelf: [names objectAtIndex: i]];
+            Shelf *temp = [Shelf new];
+            [temp setSection: [names objectAtIndex: i]];
+            [self addShelf: temp];
         }
     }
     
@@ -52,8 +54,10 @@
     return library_name;
 }
 
--(void) addShelf: (NSString*) shelfName {
-    [shelves addObject: [[Shelf new] initWithSectionName: shelfName]];
+-(void) addShelf: (Shelf*) theShelf {
+    [shelves addObject: theShelf];
+    [theShelf setLocation: self];
+    
 }
 
 -(void) removeShelf: (Shelf*) theShelf {
@@ -61,6 +65,7 @@
         NSArray *booksRemoved = [theShelf getBooks];
         [unshelved_books addObjectsFromArray: booksRemoved];
         [shelves removeObject: theShelf];
+        [theShelf setLocation:nil];
     }
 }
 
@@ -73,6 +78,15 @@
     NSMutableArray *allBooks = [[NSMutableArray alloc] init];
     for (Shelf *thisShelf in shelves) {
         [allBooks addObjectsFromArray: [thisShelf getBooks]];
+    }
+    NSArray *arr = [allBooks copy];
+    return arr;
+}
+
+-(NSArray*) getunShelvedBooks {
+    NSMutableArray *allBooks = [[NSMutableArray alloc] init];
+    for (Shelf *noShelf in unshelved_books) {
+        [allBooks addObjectsFromArray: [noShelf getBooks]];
     }
     NSArray *arr = [allBooks copy];
     return arr;

@@ -22,7 +22,7 @@ void booksToConsole (Library *theLibrary) {
     for (int i=0; i< numShelves; i++ ) {
         if ( (int)[[theLibrary getShelves] count] != 0) {
             Shelf *aShelf = [[theLibrary getShelves] objectAtIndex: i];
-            NSLog(@"SECTION HEADER: %@",[aShelf getSection]);
+            NSLog(@"SECTION HEADER: %@    (Library: %@)",[aShelf getSection], [[aShelf getLocation] getLibraryName]);
             NSArray *theBooksInAShelf = [aShelf getBooks];
             for (Book *aBook in theBooksInAShelf) {
                 NSLog(@"     %@ by: %@",[aBook getTitle], [aBook getAuthor]);
@@ -41,6 +41,7 @@ int main (int argc, const char * argv[]) {
         //create the library with shelves by section names
         NSLog (@"Creating Library with Shelves");
         Library *myLibrary = [[Library new] initWithShelfNames:sectionNames];
+        [myLibrary setLibraryName:@"Best Library Ever!"];
         
         //create the books from array
         NSLog(@"Creating Books...");

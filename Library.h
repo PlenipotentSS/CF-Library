@@ -19,9 +19,10 @@
 -(Library*) initWithShelfNames: (NSArray*) names;
 -(void) setLibraryName: (NSString*) name;
 -(NSString*) getLibraryName;
--(void) addShelf: (NSString*) shelfName;
+-(void) addShelf: (Shelf*) theShelf;
 -(void) removeShelf: (Shelf*) theShelf;
 -(NSArray*) getShelves;
 -(NSArray*) getBooks;
+-(NSArray*) getunShelvedBooks;
 
 @end
