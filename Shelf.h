@@ -22,7 +22,8 @@
 -(void) setSection: (NSString*) name;
 -(NSString*) getSection;
 -(void) putBook: (Book*) theBook;
--(Book*) removeBook: (Book*) theBook;
+-(void) removeBook: (Book*) theBook;
+-(void) destroyBook: (Book*) theBook;
 -(NSArray*) getBooks;
 
 @end

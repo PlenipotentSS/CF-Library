@@ -16,6 +16,8 @@
     NSString *library_name;
 }
 
+@property(strong) Shelf *unshelved_books;
+
 -(Library*) initWithShelfNames: (NSArray*) names;
 -(void) setLibraryName: (NSString*) name;
 -(NSString*) getLibraryName;

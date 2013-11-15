@@ -72,6 +72,9 @@
     return title;
 }
 
+-(Shelf*) getLocation {
+    return location;
+}
 
 /*
  *  Other Book Methods
@@ -85,8 +88,13 @@
 
 -(Book*) unShelf {
     [location removeBook: self];
-    location = Nil;
+    location = NULL;
     return self;
+}
+
+-(void) destroyBook {
+    [location destroyBook:self];
+    location = NULL;
 }
 
 @end

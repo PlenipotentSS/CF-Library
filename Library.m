@@ -12,6 +12,8 @@
 
 @implementation Library
 
+@synthesize unshelved_books;
+
 /*
  *  Library Constructors
  *
@@ -69,7 +71,7 @@
             [removedBook enShelf: unshelved_books];
         }
         [shelves removeObject: theShelf];
-        [theShelf setLocation:nil];
+        [theShelf setLocation:NULL];
     }
 }
 

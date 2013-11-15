@@ -20,9 +20,11 @@
 -(void) setTitle: (NSString*) t setAuthor: (NSString*) a;
 -(void) setTitle: (NSString*) t;
 -(void) setAuthor: (NSString*) a;
+-(Shelf*) getLocation;
 -(NSString*) getAuthor;
 -(NSString*) getTitle;
 -(void) enShelf: (Shelf*) theShelf;
 -(Book*) unShelf;
+-(void) destroyBook;
 
 @end

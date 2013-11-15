@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
         book_arr = [[NSMutableArray alloc] init];
-        location = nil;
+        location = NULL;
     }
     
     return self;
@@ -53,7 +53,7 @@
     if ( [self hasLocation] ) {
         return location;
     } else {
-        return nil;
+        return NULL;
     }
 }
 
@@ -69,11 +69,19 @@
     [book_arr addObject: theBook];
 }
 
--(Book*) removeBook: (Book*) theBook {
+-(void) removeBook: (Book*) theBook {
+    if ([book_arr containsObject: theBook] ) {
+        [book_arr removeObject: theBook];
+        if (location) {
+            [theBook enShelf: location.unshelved_books];
+        }
+    }
+}
+
+-(void) destroyBook: (Book*) theBook {
     if ([book_arr containsObject: theBook] ) {
         [book_arr removeObject: theBook];
     }
-    return theBook;
 }
 
 -(NSArray*)getBooks {
