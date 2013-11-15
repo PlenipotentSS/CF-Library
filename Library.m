@@ -32,7 +32,7 @@
 -(Library*) initWithShelfNames: (NSArray*) names {
     self = [super init];
     if (self) {
-        int namesCount = [names count];
+        int namesCount = (int)[names count];
         for (int i=0; i<namesCount; i++ ){
             Shelf *temp = [Shelf new];
             [temp setSection: [names objectAtIndex: i]];
