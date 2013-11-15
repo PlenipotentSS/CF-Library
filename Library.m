@@ -21,7 +21,9 @@
     self = [super init];
     if (self) {
         shelves = [[NSMutableArray alloc] init];
-        unshelved_books = [[NSMutableArray alloc] init];
+        unshelved_books = [Shelf new];
+        [unshelved_books setSection: @"Unshelved Books"];
+        [self addShelf: unshelved_books];
     }
     
     return self;
@@ -63,7 +65,9 @@
 -(void) removeShelf: (Shelf*) theShelf {
     if ( [shelves containsObject: theShelf]) {
         NSArray *booksRemoved = [theShelf getBooks];
-        [unshelved_books addObjectsFromArray: booksRemoved];
+        for (Book *removedBook in booksRemoved) {
+            [removedBook enShelf: unshelved_books];
+        }
         [shelves removeObject: theShelf];
         [theShelf setLocation:nil];
     }

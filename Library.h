@@ -12,7 +12,7 @@
 
 @interface Library : NSObject {
     NSMutableArray *shelves;
-    NSMutableArray *unshelved_books;
+    Shelf *unshelved_books;
     NSString *library_name;
 }
 
